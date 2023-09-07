@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="container">
       <div className="gap- justify-center h-screen items-center flex flex-col ">
-        <Card className="w-1/2 ">
+        <Card className="w-1/2 lg:h-1/2 sm:h-2/3">
           <CardHeader>
             <CardTitle>Login</CardTitle>
             <CardDescription>Login to Continue</CardDescription>
@@ -40,8 +40,8 @@ export default function Home() {
             <Input disabled={loading} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" className="mb-5" type="email"/>
             <Input disabled={loading} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" type="password"/>
           </CardContent>
-          <CardFooter className="flex flex-row-reverse justify-between">
-            <Button disabled={loading} onClick={handleClick} variant="default">Login</Button>
+          <CardFooter className="flex lg:flex-row-reverse flex-col justify-between">
+            <Button className="lg:w-2/5 w-full mb-3" disabled={loading} onClick={handleClick} variant="default">Login</Button>
             <p className="text-blue-700 hover:underline"><Link href={'/forgotPassword'}>Forgot Password? </Link></p>
           </CardFooter>
         </Card>
