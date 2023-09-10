@@ -6,9 +6,15 @@ async function getData(): Promise<Payment[]> {
     return [
         {
             id: "728ed52f",
-            amount: 100,
+            score: -32,
             status: "pending",
-            email: "m@example.com",
+            title: "Jal jeevan mission achieves milestone",
+        },
+        {
+            id: "728ed53f",
+            score: -3,
+            status: "processing",
+            title: "Rural house hold with tapwater Increase from 17% to 55%",
         },
         // ...
     ]
@@ -19,7 +25,7 @@ export default async function DemoPage() {
 
     return (
         <div className="container mx-auto py-10">
-            <DataTable searchKey="email" columns={columns} data={data} />
+            <DataTable searchKey="title" columns={columns} data={data} />
         </div>
     )
 }

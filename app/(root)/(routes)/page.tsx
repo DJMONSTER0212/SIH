@@ -8,12 +8,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { useRouter } from 'next/navigation'
 
+
+import axios from "axios";
 import {useState }from "react"
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 export default function Home() {
+  const router = useRouter()
+  
+
+  // router.push('/dashboard', { scroll: false })
   const [email,setEmail] = useState("")
   const [loading,setLoading] = useState(false);
 
@@ -22,9 +29,18 @@ export default function Home() {
   const handleClick = async ()=>{
     setLoading(true)
     try {
-          
+      const data = await axios.post('http://localhost:3000/api/user/auth',{
+        password,
+        email
+      });
+      if(data.status===200){
+        router.push(`/${data.data}/dashboard`, { scroll: false })
+      }
+      // console.log(data.data);
     } catch (error) {
-      
+      console.log(error);
+    }finally{
+      setLoading(false);
     }
     
   }
