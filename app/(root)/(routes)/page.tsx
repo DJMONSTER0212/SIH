@@ -29,7 +29,7 @@ export default function Home() {
   const handleClick = async ()=>{
     setLoading(true)
     try {
-      const data = await axios.post('http://localhost:3000/api/user/auth',{
+      const data = await axios.post('/api/user/auth',{
         password,
         email
       });

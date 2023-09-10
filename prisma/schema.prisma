@@ -20,17 +20,17 @@ model NodelOfficer{
 }
 
 // model FeedBackStory{
-//   id     String  @id  @default(auto()) @map("_id") @db.ObjectId
-//   tag   String
-//   title  String
-//   polarity  Float
-//   SentimentScore Float
-//   link    Float
-//   Language String 
-//   officerId String
-//   nodelofficer  NodelOfficer @relation("NodelOfficerToFeedBackStory",fields: [officerId],references: [id])
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime  @updatedAt
+  // id     String  @id  @default(auto()) @map("_id") @db.ObjectId
+  // tag   String
+  // title  String
+  // polarity  Float
+  // SentimentScore Float
+  // link    String
+  // Language String 
+  // officerId String
+  // nodelofficer  NodelOfficer @relation("NodelOfficerToFeedBackStory",fields: [officerId],references: [id])
+  // createdAt DateTime @default(now())
+  // updatedAt DateTime  @updatedAt
 
 //   @@index([officerId])
 // }
